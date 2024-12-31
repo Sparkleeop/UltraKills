@@ -1,13 +1,11 @@
 package me.pixelmaniastudios.customdeathmsg.config;
 
-import org.bukkit.configuration.file.FileConfiguration;
-
 import me.pixelmaniastudios.customdeathmsg.CustomDeathMessages;
+import org.bukkit.ChatColor;
 
 public class ConfigManager {
 
-    private CustomDeathMessages plugin;
-    private FileConfiguration config;
+    private final CustomDeathMessages plugin;
 
     public ConfigManager(CustomDeathMessages plugin) {
         this.plugin = plugin;
@@ -15,15 +13,10 @@ public class ConfigManager {
 
     public void loadConfig() {
         plugin.saveDefaultConfig();
-        config = plugin.getConfig();
     }
 
-    public FileConfiguration getConfig() {
-        return config;
-    }
-
-    public void reloadConfig() {
-        plugin.reloadConfig();
-        loadConfig();
+    public String formatDeathMessage(String message) {
+        String prefix = plugin.getConfig().getString("prefix", "&7[&cDeath&7] ");
+        return ChatColor.translateAlternateColorCodes('&', prefix + message);
     }
 }

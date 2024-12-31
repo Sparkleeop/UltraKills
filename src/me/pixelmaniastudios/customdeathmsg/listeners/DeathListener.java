@@ -2,16 +2,12 @@ package me.pixelmaniastudios.customdeathmsg.listeners;
 
 import me.pixelmaniastudios.customdeathmsg.CustomDeathMessages;
 import me.pixelmaniastudios.customdeathmsg.webhook.WebhookUtils;
-import org.bukkit.Particle;
-import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
 public class DeathListener implements Listener {
@@ -33,13 +29,6 @@ public class DeathListener implements Listener {
         }
         
         Player player = event.getEntity();
-        String deathCause = getDeathCause(event);
-
-        // Play the corresponding sound
-        playDeathSound(player, deathCause);
-
-        // Trigger the corresponding death effect
-        triggerDeathEffect(player.getLocation(), deathCause);
 
         // Get the prefix and death message
         String prefix = colorize(config.getString("prefix", ""));
@@ -81,28 +70,4 @@ public class DeathListener implements Listener {
     private String colorize(String message) {
         return message.replace("&", "§");
     }
-    
-    private String getDeathCause(PlayerDeathEvent event) {
-        EntityDamageEvent.DamageCause cause = event.getEntity().getLastDamageCause().getCause();
-        return cause.toString();
-    }
-    
-    private void playDeathSound(Player player, String deathCause) {
-        String soundKey = plugin.getConfig().getString("deathSounds." + deathCause, "OTHER");
-        Sound sound = Sound.valueOf(soundKey);
-        
-        // Play the death sound
-        player.playSound(player.getLocation(), sound, 1.0f, 1.0f);
-    }
-
-    private void triggerDeathEffect(Location location, String deathCause) {
-        String effectKey = plugin.getConfig().getString("deathEffects." + deathCause, "OTHER");
-        Particle particle = Particle.valueOf(effectKey);
-        
-        // Trigger particle effect at the player's death location
-        location.getWorld().spawnParticle(particle, location, 50);
-
-    }
 }
-
-

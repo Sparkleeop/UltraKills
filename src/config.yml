@@ -42,13 +42,4 @@ deathMessages:
   shot: "{player} &6was shot by {killer}!"
   mob: "{player} &4was slain by {killer}!"
   lightning_strike: "{player} &ewas obliterated by a lightning strike!"
-  
-  # Customize the Deathsound to your liking
-  # Find death sounds here: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
-  deathSounds:
-  EXPLOSION: "minecraft:entity.generic.explode"
-  LAVA: "minecraft:entity.lava.pop"
-  FALL: "minecraft:entity.generic.fall"
-  PVP: "minecraft:entity.player.levelup"
-  OTHER: "minecraft:entity.player.hurt"
-  
+ 
