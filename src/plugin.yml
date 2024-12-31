@@ -1,0 +1,8 @@
+name: CustomDeathMessages
+main: me.pixelmaniastudios.customdeathmsg.CustomDeathMessages
+version: 1.0.0
+api-version: 1.16
+description: Customize death messages with per-world settings and Discord integration!
+author: Sparklee.dev
+commands: {}
+permissions: {}
