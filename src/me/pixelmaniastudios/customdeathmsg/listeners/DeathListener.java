@@ -1,13 +1,14 @@
 package me.pixelmaniastudios.customdeathmsg.listeners;
 
 import me.pixelmaniastudios.customdeathmsg.CustomDeathMessages;
+import me.pixelmaniastudios.customdeathmsg.utils.MessageUtils;
 import me.pixelmaniastudios.customdeathmsg.webhook.WebhookUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 
 public class DeathListener implements Listener {
@@ -27,22 +28,23 @@ public class DeathListener implements Listener {
         if (config.getStringList("worldSettings.disabledWorlds").contains(worldName)) {
             return;
         }
-        
+
         Player player = event.getEntity();
+        String deathCause = getDeathCause(event);
 
         // Get the prefix and death message
-        String prefix = colorize(config.getString("prefix", ""));
+        String prefix = MessageUtils.colorize(config.getString("prefix", ""));
         String deathMessage = getDeathMessage(event);
 
         // Combine prefix and message
         String finalMessage = prefix + deathMessage;
 
         // Set the message
-        event.setDeathMessage(colorize(finalMessage));
+        event.setDeathMessage(MessageUtils.colorize(finalMessage));
 
         // Send to Discord if webhook is enabled
         if (config.getBoolean("webhook.enabled")) {
-            sendToDiscord(ChatColor.stripColor(finalMessage)); // Send plain text to Discord
+            sendToDiscord(MessageUtils.stripColor(finalMessage)); // Send plain text to Discord
         }
     }
 
@@ -66,8 +68,8 @@ public class DeathListener implements Listener {
         }
     }
 
-    // Utility method to colorize text
-    private String colorize(String message) {
-        return message.replace("&", "§");
+    private String getDeathCause(PlayerDeathEvent event) {
+        EntityDamageEvent.DamageCause cause = event.getEntity().getLastDamageCause().getCause();
+        return cause.toString();
     }
 }
