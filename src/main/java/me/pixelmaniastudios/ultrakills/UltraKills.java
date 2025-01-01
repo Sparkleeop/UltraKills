@@ -21,7 +21,7 @@ public class UltraKills extends JavaPlugin {
 
         // Register events and commands
         getServer().getPluginManager().registerEvents(new DeathListener(this), this);
-        getCommand("cdmreload").setExecutor(new ReloadCommand(this)); // Register reload command
+        getCommand("uklreload").setExecutor(new ReloadCommand(this)); // Register reload command
 
         getLogger().info("UltraKills plugin enabled!");
     }
