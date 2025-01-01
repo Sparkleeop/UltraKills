@@ -1,0 +1,44 @@
+
+# Developed by PixelMania Studios
+# wiki: https://wiki.pixelmania.online/ultra-deathmessages
+#
+# Prefix for all messages, supports color codes.
+prefix: "&7[&cDeath&7] "
+
+# Discord webhook integration
+# Guide on how to get webhooks by discord: https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
+webhook:
+  enabled: false
+  url: "https://discord.com/api/webhooks/your-webhook-url"
+
+worldSettings:
+
+  # Disable the worlds where you want to disable DeathMessages.
+  disabledWorlds:
+#    - "world_nether"
+#    - "world_the_end"
+
+# Customize the Death Messages shown
+deathMessages:
+  default: "{player} &ewas slain mysteriously!"
+  fall: "{player} &cfell to his death!"
+  lava: "{player} &4burned to death in lava!"
+  fire: "{player} &6was roasted alive!"
+  fire_tick: "{player} &cwas set ablaze!"
+  drowning: "{player} &9drowned in the water!"
+  starvation: "{player} &7starved to death!"
+  explosion: "{player} &cwas blown up by {killer}!"
+  block_explosion: "{player} &chas exploded!"
+  entity_explosion: "{player} &dwas caught in an explosion!"
+  lightning: "{player} &ewas struck by lightning!"
+  suffocation: "{player} &7suffocated in a wall!"
+  falling_block: "{player} &cwas crushed by a falling block!"
+  poison: "{player} &awas poisoned!"
+  magic: "{player} &5was killed by magic!"
+  wither: "{player} &8was consumed by the Wither!"
+  ender_dragon: "{player} &5was annihilated by the Ender Dragon!"
+  thorns: "{player} &cwas pricked to death!"
+  void: "{player} &0fell into the void!"
+  shot: "{player} &6was shot by {killer}!"
+  mob: "{player} &4was slain by {killer}!"
+  lightning_strike: "{player} &ewas obliterated by a lightning strike!"
