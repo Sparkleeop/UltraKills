@@ -1,0 +1,22 @@
+name: UltraKills
+main: me.pixelmaniastudios.ultrakills.UltraKills
+version: 1.0.0
+api-version: 1.16
+description: Customize death messages with per-world settings and Discord integration!
+author: Sparklee.dev
+commands:
+  uklreload:
+    description: Reload the UltraKills configuration.
+    usage: /uklreload
+    permission: ultrakills.reload
+    permission-message: You do not have permission to execute this command.
+permissions:
+  ultrakill.admin:
+    description: Allows admins to reload the plugin configuration.
+    default: op
+  ultrakill.reload:
+    description: Allows admins to reload the plugin configuration.
+    default: op
+  ultrakills.vip:
+    description: Permission for VIP users.
+    default: op
