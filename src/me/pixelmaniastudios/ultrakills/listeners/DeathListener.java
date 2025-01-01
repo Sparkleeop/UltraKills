@@ -52,8 +52,20 @@ public class DeathListener implements Listener {
         FileConfiguration config = plugin.getConfig();
         Player player = event.getEntity();
 
-        // Default values
-        String causeKey = "default";
+        // Determine the permission group based on the player's permissions
+        String permissionGroup = "default"; // Default group
+        for (String group : config.getConfigurationSection("permissionGroups").getKeys(false)) {
+            if (group.equals("default")) continue; // Skip default for now
+            for (String permission : config.getStringList("permissionGroups." + group + ".permissions")) {
+                if (player.hasPermission(permission)) {
+                    permissionGroup = group;
+                    break;
+                }
+            }
+        }
+
+        // Fetch death messages for the determined permission group
+        String causeKey = "default"; // Default death cause
         String killerName = "unknown";
 
         if (player.getLastDamageCause() != null) {
@@ -71,26 +83,27 @@ public class DeathListener implements Listener {
                 org.bukkit.entity.Entity damager = entityDamageByEntityEvent.getDamager();
 
                 if (damager instanceof Player) {
-                    // Killed by a player
-                    killerName = ((Player) damager).getName();
+                    killerName = ((Player) damager).getName(); // Killed by another player
                     causeKey = "killedby-player";
                 } else {
-                    // Killed by a mob or other entity
-                    killerName = damager.getName();
+                    killerName = damager.getName(); // Killed by mob or other entity
                     causeKey = "mob";
                 }
             }
         }
 
-        // Fetch the death message template based on causeKey
-        String messageTemplate = config.getString("deathMessages." + causeKey, config.getString("deathMessages.default"));
+        // Get the message template for the permission group and cause
+        String messageTemplate = config.getString(
+            "permissionGroups." + permissionGroup + ".messages." + causeKey,
+            config.getString("permissionGroups." + permissionGroup + ".messages.default")
+        );
 
-        // Replace placeholders in the template
-        String playerName = player.getName();
+        // Replace placeholders
         return messageTemplate
-                .replace("{player}", playerName)
+                .replace("{player}", player.getName())
                 .replace("{killer}", killerName);
     }
+
 
     private void sendToDiscord(String message) {
         String webhookUrl = plugin.getConfig().getString("webhook.url");
