@@ -9,109 +9,102 @@
  #####   #######    ####   #### ##  ##   ##           ### ###   ######  #######  #######   #####  
 
 # wiki: https://wiki.pixelmania.online/wiki/ultrakills
+# discord: https://discord.gg/fQuPvhasjV
 #
 # Prefix for all messages, supports color codes.
-prefix: "&7[&cKill&7] "
+prefix: "&7[&#c71585Kill&7] "
 
 # Discord webhook integration
-# Guide on how to get webhooks by discord: https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks
 webhook:
   enabled: false
   url: "https://discord.com/api/webhooks/your-webhook-url"
 
 worldSettings:
-  # Disable the worlds where you want to disable DeathMessages.
   disabledWorlds:
     - "example_world"
     - "example_world2"
 
-# Permission-based death messages
 permissionGroups:
   default:
     permissions:
-      - "default" # Default group for players without specific permissions
-#     - "ultrakills.example" (Custom permissions can also be added.) 
+      - "default"
+#     - "ultrakills.example" 
     messages:
-      default: "{player} &ewas slain mysteriously!"
-      fall: "{player} &cfell to their death!"
-      lava: "{player} &4burned to death in lava!"
-      fire: "{player} &6was roasted alive!"
-      fire_tick: "{player} &cwas set ablaze!"
-      drowning: "{player} &9drowned in the water!"
-      starvation: "{player} &7starved to death!"
-      explosion: "{player} &cwas blown up by {killer}!"
-      block_explosion: "{player} &chas exploded!"
-      entity_explosion: "{player} &dwas caught in an explosion!"
-      lightning: "{player} &ewas struck by lightning!"
-      suffocation: "{player} &7suffocated in a wall!"
-      falling_block: "{player} &cwas crushed by a falling block!"
-      poison: "{player} &awas poisoned!"
-      magic: "{player} &5was killed by magic!"
-      wither: "{player} &8was consumed by the Wither!"
-      ender_dragon: "{player} &5was annihilated by the Ender Dragon!"
-      thorns: "{player} &cwas pricked to death!"
-      void: "{player} &0fell into the void!"
-      shot: "{player} &6was shot by {killer}!"
-      mob: "{player} &4was slain by {killer}!"
-      lightning_strike: "{player} &ewas obliterated by a lightning strike!"
+      default: "{player} &#eb34dbwas slain mysteriously!"
+      fall: "{player} &#ff4500plummeted to their doom!"
+      lava: "{player} &#ff6347melted in the fiery embrace of lava!"
+      fire: "{player} &#ffa500became a crispy toast!"
+      fire_tick: "{player} &#ff7f50got roasted!"
+      drowning: "{player} &#4682b4sank into the abyss!"
+      starvation: "{player} &#a52a2astarved to death!"
+      explosion: "{player} &#8b0000exploded into a million pieces by &#ff0000{killer}!"
+      block_explosion: "{player} &#dc143cwas blown sky-high!"
+      entity_explosion: "{player} &#ff69b4met a flashy end!"
+      lightning: "{player} &#f4c430was struck by a divine bolt!"
+      suffocation: "{player} &#808080was crushed by suffocating walls!"
+      falling_block: "{player} &#b22222was flattened by a heavy block!"
+      poison: "{player} &#32cd32was consumed by venom!"
+      magic: "{player} &#9370dbwas undone by sorcery!"
+      wither: "{player} &#696969fell to the wrath of the Wither!"
+      ender_dragon: "{player} &#800080was obliterated by the Ender Dragon!"
+      thorns: "{player} &#228b22succumbed to thorns!"
+      void: "{player} &#000000disappeared into the void!"
+      shot: "{player} &#ff4500was shot down by {killer}!"
+      mob: "{player} &#ff6347was mauled by {killer}!"
+      lightning_strike: "{player} &#ffd700was reduced to ashes by lightning!"
 
-# Death messages for vip groups.
   vip:
-#   These messages will affect only players with the permission below.
     permissions:
       - "ultrakills.vip"
-#     - "ultrakills.example" (Custom permissions can also be added.) 
+#     - "ultrakills.example" 
     messages:
-      default: "&6VIP {player} &awas slain in style!"
-      fall: "&6VIP {player} &cfell gloriously!"
-      lava: "&6VIP {player} &4tried lava, but it didn't end well!"
-      fire: "&6VIP {player} &6was flambéed!"
-      fire_tick: "&6VIP {player} &cwas scorched by flames!"
-      drowning: "&6VIP {player} &9ran out of air in style!"
-      starvation: "&6VIP {player} &7forgot to eat their golden apples!"
-      explosion: "&6VIP {player} &cwas blown to smithereens by {killer}!"
-      block_explosion: "&6VIP {player} &cexploded in glory!"
-      entity_explosion: "&6VIP {player} &dmet their end in a blast!"
-      lightning: "&6VIP {player} &ewas zapped by a lightning bolt!"
-      suffocation: "&6VIP {player} &7got too cozy with the walls!"
-      falling_block: "&6VIP {player} &cwas crushed by falling debris!"
-      poison: "&6VIP {player} &awas overwhelmed by poison!"
-      magic: "&6VIP {player} &5was vanquished by dark magic!"
-      wither: "&6VIP {player} &8fell to the Wither's might!"
-      ender_dragon: "&6VIP {player} &5was obliterated by the Ender Dragon!"
-      thorns: "&6VIP {player} &cdidn't respect the thorns!"
-      void: "&6VIP {player} &0descended into the void!"
-      shot: "&6VIP {player} &6was sniped by {killer}!"
-      mob: "&6VIP {player} &4was defeated by {killer}!"
-      lightning_strike: "&6VIP {player} &ewas electrified in style!"
-      
-# Death messages for admin groups.    
+      default: "&6VIP {player} &#ffb6c1was slain in style!"
+      fall: "&6VIP {player} &#ffa07acouldn't defy gravity!"
+      lava: "&6VIP {player} &#ff4500got scorched in lava!"
+      fire: "&6VIP {player} &#ff8c00was flambéed!"
+      fire_tick: "&6VIP {player} &#ff6347got singed!"
+      drowning: "&6VIP {player} &#1e90ffforgot to breathe!"
+      starvation: "&6VIP {player} &#cd5c5clearned hunger pains the hard way!"
+      explosion: "&6VIP {player} &#ff4500was blown up in an epic blast!"
+      block_explosion: "&6VIP {player} &#ff6347met an explosive end!"
+      entity_explosion: "&6VIP {player} &#ee82eewas blown to smithereens!"
+      lightning: "&6VIP {player} &#ffcc00felt the power of Zeus!"
+      suffocation: "&6VIP {player} &#696969was buried alive!"
+      falling_block: "&6VIP {player} &#8b0000was crushed by debris!"
+      poison: "&6VIP {player} &#32cd32succumbed to toxins!"
+      magic: "&6VIP {player} &#dda0ddwas overwhelmed by magic!"
+      wither: "&6VIP {player} &#808080was consumed by the Wither!"
+      ender_dragon: "&6VIP {player} &#800080was annihilated by the Ender Dragon!"
+      thorns: "&6VIP {player} &#228b22forgot the power of thorns!"
+      void: "&6VIP {player} &#000000vanished into the void!"
+      shot: "&6VIP {player} &#ff4500was sniped by {killer}!"
+      mob: "&6VIP {player} &#cd5c5cwas bested by {killer}!"
+      lightning_strike: "&6VIP {player} &#ffd700was electrified in style!"
+
   admin:
-#   These messages will affect only players with the permission below.
     permissions:
       - "ultrakills.admin"
-      - "ultrakills.moderator"
-#     - "ultrakills.example" (Custom permissions can also be added.) 
+#     - "ultrakills.example" 
     messages:
-      default: "&4Admin {player} &cisn't invincible after all!"
-      fall: "&4Admin {player} &cfell from their high place!"
-      lava: "&4Admin {player} &4melted in the lava pit!"
-      fire: "&4Admin {player} &6learned the hard way about fire!"
-      fire_tick: "&4Admin {player} &cwas burned to ashes!"
-      drowning: "&4Admin {player} &9took a fatal dive!"
-      starvation: "&4Admin {player} &7forgot to keep themselves nourished!"
-      explosion: "&4Admin {player} &cwas caught in an explosion by {killer}!"
-      block_explosion: "&4Admin {player} &cexploded into pixels!"
-      entity_explosion: "&4Admin {player} &dwas blown away!"
-      lightning: "&4Admin {player} &ewas struck by divine lightning!"
-      suffocation: "&4Admin {player} &7couldn't breathe anymore!"
-      falling_block: "&4Admin {player} &cwas crushed by falling rubble!"
-      poison: "&4Admin {player} &asuccumbed to poison!"
-      magic: "&4Admin {player} &5was destroyed by magic!"
-      wither: "&4Admin {player} &8was overwhelmed by the Wither!"
-      ender_dragon: "&4Admin {player} &5was vaporized by the Ender Dragon!"
-      thorns: "&4Admin {player} &cwas pierced by sharp thorns!"
-      void: "&4Admin {player} &0vanished into the void!"
-      shot: "&4Admin {player} &6was taken down by {killer}!"
-      mob: "&4Admin {player} &4met their match with {killer}!"
-      lightning_strike: "&4Admin {player} &ewas eradicated by lightning!"
+      default: "&4Admin {player} &#ff1493faced their demise!"
+      fall: "&4Admin {player} &#ff4500fell from the skies!"
+      lava: "&4Admin {player} &#ff6347couldn't withstand the lava!"
+      fire: "&4Admin {player} &#ffa07awas burned to a crisp!"
+      fire_tick: "&4Admin {player} &#ff4500was consumed by flames!"
+      drowning: "&4Admin {player} &#1e90ffdrowned in the depths!"
+      starvation: "&4Admin {player} &#a52a2arun out of sustenance!"
+      explosion: "&4Admin {player} &#ff0000was blasted away by {killer}!"
+      block_explosion: "&4Admin {player} &#ff6347met a catastrophic end!"
+      entity_explosion: "&4Admin {player} &#ee82eewas blown apart!"
+      lightning: "&4Admin {player} &#ffd700was obliterated by a thunderbolt!"
+      suffocation: "&4Admin {player} &#696969was crushed by walls!"
+      falling_block: "&4Admin {player} &#b22222was flattened by falling debris!"
+      poison: "&4Admin {player} &#32cd32succumbed to venom!"
+      magic: "&4Admin {player} &#9370dbwas vanquished by arcane powers!"
+      wither: "&4Admin {player} &#696969fell to the Wither!"
+      ender_dragon: "&4Admin {player} &#800080was obliterated by the Ender Dragon!"
+      thorns: "&4Admin {player} &#228b22met their end on sharp thorns!"
+      void: "&4Admin {player} &#000000disappeared into the void!"
+      shot: "&4Admin {player} &#ff4500was struck down by {killer}!"
+      mob: "&4Admin {player} &#cd5c5cmet their match against {killer}!"
+      lightning_strike: "&4Admin {player} &#ffd700was vaporized by lightning!"

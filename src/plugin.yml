@@ -11,12 +11,9 @@ commands:
     permission: ultrakills.reload
     permission-message: You do not have permission to execute this command.
 permissions:
-  ultrakill.admin:
+  ultrakills.admin:
     description: Allows admins to reload the plugin configuration.
     default: op
-  ultrakill.reload:
+  ultrakills.reload:
     description: Allows admins to reload the plugin configuration.
-    default: op
-  ultrakills.vip:
-    description: Permission for VIP users.
     default: op
