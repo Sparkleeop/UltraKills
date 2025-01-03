@@ -94,8 +94,8 @@ public class DeathListener implements Listener {
 
         // Get the message template for the permission group and cause
         String messageTemplate = config.getString(
-            "permissionGroups." + permissionGroup + ".messages." + causeKey,
-            config.getString("permissionGroups." + permissionGroup + ".messages.default")
+                "permissionGroups." + permissionGroup + ".messages." + causeKey,
+                config.getString("permissionGroups." + permissionGroup + ".messages.default")
         );
 
         // Replace placeholders
